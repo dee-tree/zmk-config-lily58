@@ -65,6 +65,20 @@
             bindings = <&kp EQUAL &kp GT>;
             label = "RIGHT_ARROW_WIDE";
         };
+
+        dot: dot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>;
+            label = "DOT";
+        };
+
+        comma: comma {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>;
+            label = "COMMA";
+        };
     };
 
     keymap {
@@ -101,7 +115,7 @@
 &bt BT_NXT         &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4                            &ext_power EP_ON   &ext_power EP_OFF  &ext_power EP_TOG  &trans     &trans         &bt BT_CLR
 &kp GRAVE          &kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3      &kp NUMBER_4  &kp N5                                  &kp NUMBER_6       &kp N7             &kp N8             &kp N9     &kp N0         &kp SINGLE_QUOTE
 &right_arrow_wide  &arrow_right  &kp UNDERSCORE  &kp EXCLAMATION   &kp PLUS      &kp LS(ASTERISK)                        &kp SLASH          &kp MINUS          &kp COLON          &kp TILDE  &kp PIPE       &kp DOLLAR
-&kp AT_SIGN        &kp HASH      &kp LESS_THAN   &kp GREATER_THAN  &kp KP_DOT    &kp SINGLE_QUOTE  &kp LPAR    &kp RPAR  &kp DOUBLE_QUOTES  &kp KP_COMMA       &kp SEMI           &kp EQUAL  &kp BACKSLASH  &kp PERCENT
+&kp AT_SIGN        &kp HASH      &kp LESS_THAN   &kp GREATER_THAN  &dot          &kp SINGLE_QUOTE  &kp LPAR    &kp RPAR  &kp DOUBLE_QUOTES  &comma             &kp SEMI           &kp EQUAL  &kp BACKSLASH  &kp PERCENT
                                                  &trans            &trans        &trans            &trans      &trans    &mo 3              &trans             &trans
             >;
 
