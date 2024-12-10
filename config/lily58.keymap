@@ -86,7 +86,7 @@
         home_row_sticky: home_row_sticky {
             compatible = "zmk,behavior-sticky-key";
             label = "HOME_ROW_STICKY";
-            bindings = <&sk>;
+            bindings = <&kp>;
             #binding-cells = <1>;
             release-after-ms = <2000>;
             quick-release;
@@ -175,7 +175,7 @@
 &trans                &trans                     &trans                     &trans                       &trans                         &trans                              &trans       &trans                         &trans                       &trans                     &trans                     &trans
 &kp C_BRIGHTNESS_DEC  &trans                     &trans                     &trans                       &trans                         &trans                              &trans       &trans                         &trans                       &trans                     &trans                     &kp C_BRIGHTNESS_INC
 &kp C_VOLUME_DOWN     &home_row_sticky LEFT_GUI  &home_row_sticky LEFT_ALT  &home_row_sticky LEFT_SHIFT  &home_row_sticky LEFT_CONTROL  &kp C_PLAY_PAUSE                    &kp C_MUTE   &home_row_sticky LEFT_CONTROL  &home_row_sticky LEFT_SHIFT  &home_row_sticky LEFT_ALT  &home_row_sticky LEFT_GUI  &kp C_VOLUME_UP
-&kp C_PREVIOUS        &trans                     &trans                     &trans                       &trans                         &kp TAB           &trans    &trans  &kp LS(TAB)  &kp LG(SPACE)                  &trans                       &trans                     &trans                     &kp C_NEXT
+&kp C_PREVIOUS        &trans                     &trans                     &caps_word                   &trans                         &kp TAB           &trans    &trans  &kp LS(TAB)  &kp LG(SPACE)                  &trans                       &trans                     &trans                     &kp C_NEXT
                                                                             &trans                       &caps_word                     &trans            &trans    &trans  &trans       &trans                         &trans
             >;
         };
