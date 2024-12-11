@@ -54,7 +54,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "BACKSPACE_TAP_DANCE";
             #binding-cells = <0>;
-            bindings = <&mt LSHFT BACKSPACE>, <&key_repeat>;
+            bindings = <&mt LSHFT BACKSPACE>, <&double_backspace>;
+
+            tapping-term-ms = <175>;
         };
 
         copy_caps_word: copy_caps_word {
@@ -97,7 +99,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "DELETE_TAP_DANCE";
             #binding-cells = <0>;
-            bindings = <&lt 4 DELETE>, <&key_repeat>;
+            bindings = <&lt 4 DELETE>, <&double_delete>;
+
+            tapping-term-ms = <175>;
         };
     };
 
@@ -114,6 +118,20 @@
             #binding-cells = <0>;
             bindings = <&kp EQUAL &kp GT>;
             label = "RIGHT_ARROW_WIDE";
+        };
+
+        double_backspace: double_backspace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE &kp BACKSPACE>;
+            label = "DOUBLE_BACKSPACE";
+        };
+
+        double_delete: double_delete {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DELETE &kp DELETE>;
+            label = "DOUBLE_DELETE";
         };
     };
 
