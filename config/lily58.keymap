@@ -54,7 +54,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "BACKSPACE_TAP_DANCE";
             #binding-cells = <0>;
-            bindings = <&mt LSHFT BACKSPACE>, <&kp BACKSPACE>;
+            bindings = <&mt LSHFT BACKSPACE>, <&key_repeat>;
         };
 
         copy_caps_word: copy_caps_word {
@@ -97,7 +97,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "DELETE_TAP_DANCE";
             #binding-cells = <0>;
-            bindings = <&lt 4 DELETE>, <&kp DELETE>;
+            bindings = <&lt 4 DELETE>, <&key_repeat>;
         };
     };
 
