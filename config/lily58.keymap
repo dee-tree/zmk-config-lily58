@@ -54,9 +54,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "BACKSPACE_TAP_DANCE";
             #binding-cells = <0>;
-            bindings = <&mt LSHFT BACKSPACE>, <&double_backspace>;
+            bindings = <&kp BACKSPACE>, <&kp BACKSPACE>;
 
-            tapping-term-ms = <175>;
+            tapping-term-ms = <150>;
         };
 
         copy_caps_word: copy_caps_word {
@@ -99,9 +99,29 @@
             compatible = "zmk,behavior-tap-dance";
             label = "DELETE_TAP_DANCE";
             #binding-cells = <0>;
-            bindings = <&lt 4 DELETE>, <&double_delete>;
+            bindings = <&kp DELETE>, <&kp DELETE>;
 
-            tapping-term-ms = <175>;
+            tapping-term-ms = <150>;
+        };
+
+        backspace_modified: backspace_modified {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BACKSPACE_MODIFIED";
+            bindings = <&kp>, <&backspace_tap_dance>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
+        };
+
+        delete_modified: delete_modified {
+            compatible = "zmk,behavior-hold-tap";
+            label = "DELETE_MODIFIED";
+            bindings = <&mo>, <&delete_tap_dance>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -147,11 +167,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC           &kp N1  &kp N2  &kp N3        &kp N4            &kp N5                                                  &kp N6     &kp N7                &kp N8             &kp N9   &kp N0    &kp GRAVE
-&kp TAB           &kp Q   &kp W   &kp E         &kp R             &kp T                                                   &kp Y      &kp U                 &kp I              &kp O    &kp P     &kp MINUS
-&kp LEFT_GUI      &kp A   &kp S   &kp D         &kp F             &kp G                                                   &kp H      &kp J                 &kp K              &kp L    &kp SEMI  &kp SQT
-&mt LEFT_ALT ESC  &kp Z   &kp X   &kp C         &kp V             &kp B        &kp LBKT                  &kp RBKT         &kp N      &kp M                 &kp COMMA          &kp DOT  &kp FSLH  &kp BACKSPACE
-                                  &lt 4 ESCAPE  &mt LSHIFT LC(C)  &lt 1 LC(V)  &mt LEFT_CONTROL SPACE    &mt LCTRL ENTER  &lt 2 TAB  &backspace_tap_dance  &delete_tap_dance
+&kp ESC           &kp N1  &kp N2  &kp N3        &kp N4            &kp N5                                                  &kp N6     &kp N7                            &kp N8                &kp N9   &kp N0    &kp GRAVE
+&kp TAB           &kp Q   &kp W   &kp E         &kp R             &kp T                                                   &kp Y      &kp U                             &kp I                 &kp O    &kp P     &kp MINUS
+&kp LEFT_GUI      &kp A   &kp S   &kp D         &kp F             &kp G                                                   &kp H      &kp J                             &kp K                 &kp L    &kp SEMI  &kp SQT
+&mt LEFT_ALT ESC  &kp Z   &kp X   &kp C         &kp V             &kp B        &kp LBKT                  &kp RBKT         &kp N      &kp M                             &kp COMMA             &kp DOT  &kp FSLH  &kp BACKSPACE
+                                  &lt 4 ESCAPE  &mt LSHIFT LC(C)  &lt 1 LC(V)  &mt LEFT_CONTROL SPACE    &mt LCTRL ENTER  &lt 2 TAB  &backspace_modified LEFT_SHIFT 0  &delete_modified 4 0
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
