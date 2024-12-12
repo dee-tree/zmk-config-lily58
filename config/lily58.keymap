@@ -107,6 +107,13 @@
             flavor = "balanced";
             quick-tap-ms = <125>;
         };
+
+        numlock: numlock {
+            compatible = "zmk,behavior-caps-word";
+            label = "NUMLOCK";
+            #binding-cells = <0>;
+            continue-list = <NUMBER_1 NUMBER_2 NUMBER_3 NUMBER_4 NUMBER_5 NUMBER_6 NUMBER_7 NUMBER_8 NUMBER_9 NUMBER_0 PERIOD MINUS UNDERSCORE PLUS>;
+        };
     };
 
     macros {
@@ -122,20 +129,6 @@
             #binding-cells = <0>;
             bindings = <&kp EQUAL &kp GT>;
             label = "RIGHT_ARROW_WIDE";
-        };
-
-        double_backspace: double_backspace {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE &kp BACKSPACE>;
-            label = "DOUBLE_BACKSPACE";
-        };
-
-        double_delete: double_delete {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp DELETE &kp DELETE>;
-            label = "DOUBLE_DELETE";
         };
     };
 
@@ -154,7 +147,7 @@
 &kp ESC           &kp N1  &kp N2  &kp N3        &kp N4            &kp N5                                                            &kp N6            &kp N7                         &kp N8               &kp N9   &kp N0    &kp GRAVE
 &kp TAB           &kp Q   &kp W   &kp E         &kp R             &kp T                                                             &kp Y             &kp U                          &kp I                &kp O    &kp P     &kp MINUS
 &kp LEFT_GUI      &kp A   &kp S   &kp D         &kp F             &kp G                                                             &kp H             &kp J                          &kp K                &kp L    &kp SEMI  &kp SQT
-&mt LEFT_ALT ESC  &kp Z   &kp X   &kp C         &kp V             &kp B        &kp LBKT                       &kp RBKT              &kp N             &kp M                          &kp COMMA            &kp DOT  &kp FSLH  &kp BACKSPACE
+&mt LEFT_ALT ESC  &kp Z   &kp X   &kp C         &kp V             &kp B        &kp LBKT                       &kp RBKT              &kp N             &kp M                          &kp COMMA            &kp DOT  &kp FSLH  &numlock
                                   &lt 4 ESCAPE  &mt LSHIFT LC(C)  &lt 1 LC(V)  &key_mod LEFT_CONTROL SPACE    &key_mod LCTRL ENTER  &key_layer 2 TAB  &key_mod LEFT_SHIFT BACKSPACE  &key_layer 4 DELETE
             >;
 
@@ -174,7 +167,7 @@
 &kp GRAVE    &kp NUMBER_1   &kp NUMBER_2    &kp NUMBER_3      &kp NUMBER_4  &kp N5                                  &kp NUMBER_6       &kp N7             &kp N8             &kp N9        &kp N0         &kp TILDE
 &kp DOLLAR   &kp AMPERSAND  &kp UNDERSCORE  &kp EXCLAMATION   &kp PLUS      &kp ASTERISK                            &kp SLASH          &kp MINUS          &kp COLON          &kp EQUAL     &kp PIPE       &kp CARET
 &kp AT_SIGN  &kp HASH       &kp LESS_THAN   &kp GREATER_THAN  &kp DOT       &kp SINGLE_QUOTE  &kp LPAR    &kp RPAR  &kp DOUBLE_QUOTES  &kp COMMA          &kp SEMI           &kp QUESTION  &kp BACKSLASH  &kp PERCENT
-                                            &trans            &trans        &mo 1             &trans      &trans    &mo 3              &trans             &trans
+                                            &trans            &trans        &trans            &trans      &trans    &mo 3              &trans             &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -193,7 +186,7 @@
 &kp F12       &kp F1              &kp F2              &kp F3            &kp F4               &kp F5                                               &kp F6             &kp F7         &kp F8           &kp F9    &kp F10    &kp F11
 &trans        &kp LC(LEFT_ARROW)  &kp LC(DOWN_ARROW)  &kp LC(UP_ARROW)  &kp LC(RIGHT_ARROW)  &trans                                               &trans             &kp LEFT       &kp DOWN         &kp UP    &kp RIGHT  &trans
 &trans        &trans              &kp BACKSLASH       &kp SLASH         &kp QUESTION         &kp SINGLE_QUOTE  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp DOUBLE_QUOTES  &kp LG(SPACE)  &kp LA(TAB)      &kp LBKT  &kp RBKT   &kp BSLH
-                                                      &trans            &trans               &mo 3             &mkp LCLK         &mkp RCLK        &mo 2              &kp LG(LS(S))  &kp PRINTSCREEN
+                                                      &trans            &trans               &mo 3             &mkp LCLK         &mkp RCLK        &trans             &kp LG(LS(S))  &kp PRINTSCREEN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
