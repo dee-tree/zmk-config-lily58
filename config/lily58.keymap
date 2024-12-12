@@ -50,15 +50,6 @@
             bindings = <&kp>, <&kp>;
         };
 
-        backspace_tap_dance: backspace_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BACKSPACE_TAP_DANCE";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp BACKSPACE>;
-
-            tapping-term-ms = <150>;
-        };
-
         copy_caps_word: copy_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "COPY_CAPS_WORD";
@@ -95,34 +86,25 @@
             ignore-modifiers;
         };
 
-        delete_tap_dance: delete_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "DELETE_TAP_DANCE";
-            #binding-cells = <0>;
-            bindings = <&kp DELETE>, <&kp DELETE>;
-
-            tapping-term-ms = <150>;
-        };
-
-        backspace_modified: backspace_modified {
+        key_mod: key_mod {
             compatible = "zmk,behavior-hold-tap";
-            label = "BACKSPACE_MODIFIED";
+            label = "KEY_MOD";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             quick-tap-ms = <125>;
         };
 
-        delete_modified: delete_modified {
+        key_layer: key_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "DELETE_MODIFIED";
+            label = "KEY_LAYER";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             quick-tap-ms = <125>;
         };
     };
@@ -169,11 +151,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC           &kp N1  &kp N2  &kp N3        &kp N4            &kp N5                                                  &kp N6     &kp N7                                    &kp N8                     &kp N9   &kp N0    &kp GRAVE
-&kp TAB           &kp Q   &kp W   &kp E         &kp R             &kp T                                                   &kp Y      &kp U                                     &kp I                      &kp O    &kp P     &kp MINUS
-&kp LEFT_GUI      &kp A   &kp S   &kp D         &kp F             &kp G                                                   &kp H      &kp J                                     &kp K                      &kp L    &kp SEMI  &kp SQT
-&mt LEFT_ALT ESC  &kp Z   &kp X   &kp C         &kp V             &kp B        &kp LBKT                  &kp RBKT         &kp N      &kp M                                     &kp COMMA                  &kp DOT  &kp FSLH  &kp BACKSPACE
-                                  &lt 4 ESCAPE  &mt LSHIFT LC(C)  &lt 1 LC(V)  &mt LEFT_CONTROL SPACE    &mt LCTRL ENTER  &lt 2 TAB  &backspace_modified LEFT_SHIFT BACKSPACE  &delete_modified 4 DELETE
+&kp ESC           &kp N1  &kp N2  &kp N3        &kp N4            &kp N5                                                            &kp N6            &kp N7                         &kp N8               &kp N9   &kp N0    &kp GRAVE
+&kp TAB           &kp Q   &kp W   &kp E         &kp R             &kp T                                                             &kp Y             &kp U                          &kp I                &kp O    &kp P     &kp MINUS
+&kp LEFT_GUI      &kp A   &kp S   &kp D         &kp F             &kp G                                                             &kp H             &kp J                          &kp K                &kp L    &kp SEMI  &kp SQT
+&mt LEFT_ALT ESC  &kp Z   &kp X   &kp C         &kp V             &kp B        &kp LBKT                       &kp RBKT              &kp N             &kp M                          &kp COMMA            &kp DOT  &kp FSLH  &kp BACKSPACE
+                                  &lt 4 ESCAPE  &mt LSHIFT LC(C)  &lt 1 LC(V)  &key_mod LEFT_CONTROL SPACE    &key_mod LCTRL ENTER  &key_layer 2 TAB  &key_mod LEFT_SHIFT BACKSPACE  &key_layer 4 DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -209,8 +191,8 @@
             bindings = <
 &out OUT_TOG  &out OUT_USB        &out OUT_BLE        &trans            &trans               &trans                                               &trans             &trans         &trans           &trans    &trans     &trans
 &kp F12       &kp F1              &kp F2              &kp F3            &kp F4               &kp F5                                               &kp F6             &kp F7         &kp F8           &kp F9    &kp F10    &kp F11
-&kp F1        &kp LC(LEFT_ARROW)  &kp LC(DOWN_ARROW)  &kp LC(UP_ARROW)  &kp LC(RIGHT_ARROW)  &trans                                               &trans             &kp LEFT       &kp DOWN         &kp UP    &kp RIGHT  &trans
-&kp F7        &kp F8              &kp BACKSLASH       &kp SLASH         &kp QUESTION         &kp SINGLE_QUOTE  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp DOUBLE_QUOTES  &kp LG(SPACE)  &kp LA(TAB)      &kp LBKT  &kp RBKT   &kp BSLH
+&trans        &kp LC(LEFT_ARROW)  &kp LC(DOWN_ARROW)  &kp LC(UP_ARROW)  &kp LC(RIGHT_ARROW)  &trans                                               &trans             &kp LEFT       &kp DOWN         &kp UP    &kp RIGHT  &trans
+&trans        &trans              &kp BACKSLASH       &kp SLASH         &kp QUESTION         &kp SINGLE_QUOTE  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp DOUBLE_QUOTES  &kp LG(SPACE)  &kp LA(TAB)      &kp LBKT  &kp RBKT   &kp BSLH
                                                       &trans            &trans               &mo 3             &mkp LCLK         &mkp RCLK        &mo 2              &kp LG(LS(S))  &kp PRINTSCREEN
             >;
 
@@ -229,11 +211,11 @@
 
         numpad {
             bindings = <
-&trans        &trans     &trans        &trans        &trans          &trans                                        &trans     &trans                    &trans      &trans  &trans   &trans
-&trans        &trans     &kp N9        &kp N8        &kp NUMBER_4    &trans                                        &trans     &kp F4                    &kp F8      &kp F9  &kp F11  &trans
-&kp LEFT_WIN  &kp MINUS  &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1    &kp N0                                        &trans     &kp F1                    &kp F2      &kp F3  &kp F10  &trans
-&kp LEFT_ALT  &trans     &kp N7        &kp NUMBER_6  &kp N5          &trans    &trans             &trans           &trans     &kp F5                    &kp F6      &kp F7  &kp F12  &tog 4
-                                       &kp LCTRL     &kp LEFT_SHIFT  &kp LEFT  &mt LCTRL SPACE    &mt LCTRL ENTER  &kp RIGHT  &mt LEFT_SHIFT BACKSPACE  &kp DELETE
+&trans        &trans          &trans        &trans        &trans          &trans                                          &trans     &trans                    &trans      &trans  &trans   &trans
+&trans        &trans          &kp N9        &kp N8        &kp NUMBER_4    &trans                                          &trans     &kp F4                    &kp F8      &kp F9  &kp F11  &trans
+&kp LEFT_WIN  &kp MINUS       &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1    &kp N0                                          &trans     &kp F1                    &kp F2      &kp F3  &kp F10  &trans
+&kp LEFT_ALT  &kp UNDERSCORE  &kp N7        &kp NUMBER_6  &kp N5          &kp PERIOD  &trans             &trans           &trans     &kp F5                    &kp F6      &kp F7  &kp F12  &tog 4
+                                            &kp LCTRL     &kp LEFT_SHIFT  &kp LEFT    &mt LCTRL SPACE    &mt LCTRL ENTER  &kp RIGHT  &mt LEFT_SHIFT BACKSPACE  &kp DELETE
             >;
         };
     };
