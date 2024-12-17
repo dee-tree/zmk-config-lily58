@@ -53,20 +53,13 @@
             bindings = <&kp>, <&kp>;
         };
 
-        copy_caps_word: copy_caps_word {
-            compatible = "zmk,behavior-tap-dance";
-            label = "COPY_CAPS_WORD";
-            #binding-cells = <0>;
-            bindings = <&kp LC(C)>, <&caps_word>;
-        };
-
         shift_caps: shift_caps {
             compatible = "zmk,behavior-hold-tap";
             label = "SHIFT_CAPS";
-            bindings = <&kp>, <&copy_caps_word>;
+            bindings = <&kp>, <&caps_word>;
 
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
         };
 
@@ -110,13 +103,6 @@
             flavor = "hold-preferred";
             quick-tap-ms = <200>;
         };
-
-        numlock: numlock {
-            compatible = "zmk,behavior-caps-word";
-            label = "NUMLOCK";
-            #binding-cells = <0>;
-            continue-list = <NUMBER_1 NUMBER_2 NUMBER_3 NUMBER_4 NUMBER_5 NUMBER_6 NUMBER_7 NUMBER_8 NUMBER_9 NUMBER_0 PERIOD MINUS UNDERSCORE PLUS>;
-        };
     };
 
     macros {
@@ -147,11 +133,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC       &kp N1  &kp N2  &kp N3        &kp N4                 &kp N5                                                                   &kp N6            &kp N7                  &kp N8               &kp N9   &kp N0    &kp GRAVE
-&kp TAB       &kp Q   &kp W   &kp E         &kp R                  &kp T                                                                    &kp Y             &kp U                   &kp I                &kp O    &kp P     &kp MINUS
-&kp LEFT_GUI  &kp A   &kp S   &kp D         &kp F                  &kp G                                                                    &kp H             &kp J                   &kp K                &kp L    &kp SEMI  &kp SQT
-&kp LEFT_ALT  &kp Z   &kp X   &kp C         &kp V                  &kp B               &kp LBKT                       &kp RBKT              &kp N             &kp M                   &kp COMMA            &kp DOT  &kp FSLH  &caps_word
-                              &lt 5 ESCAPE  &key_mod LSHIFT LC(C)  &key_layer 1 LC(V)  &key_mod LEFT_CONTROL SPACE    &key_mod LCTRL ENTER  &key_layer 2 TAB  &key_layer 3 BACKSPACE  &key_layer 5 DELETE
+&kp ESC       &kp N1  &kp N2  &kp N3        &kp N4                &kp N5                                                                 &kp N6            &kp N7                  &kp N8               &kp N9   &kp N0    &kp GRAVE
+&kp TAB       &kp Q   &kp W   &kp E         &kp R                 &kp T                                                                  &kp Y             &kp U                   &kp I                &kp O    &kp P     &kp MINUS
+&kp LEFT_GUI  &kp A   &kp S   &kp D         &kp F                 &kp G                                                                  &kp H             &kp J                   &kp K                &kp L    &kp SEMI  &kp SQT
+&kp LEFT_ALT  &kp Z   &kp X   &kp C         &kp V                 &kp B             &kp LBKT                       &kp RBKT              &kp N             &kp M                   &kp COMMA            &kp DOT  &kp FSLH  &caps_word
+                              &lt 5 ESCAPE  &shift_caps LSHIFT 0  &key_layer 1 TAB  &key_mod LEFT_CONTROL SPACE    &key_mod LCTRL ENTER  &key_layer 2 TAB  &key_layer 3 BACKSPACE  &key_layer 5 DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
