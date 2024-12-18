@@ -15,15 +15,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     behaviors {
         ss_hs_modmorph: ss_hs_modmorph {
@@ -63,21 +55,12 @@
             tapping-term-ms = <200>;
         };
 
-        numpad_layer: numpad_layer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NUMPAD_LAYER";
-            bindings = <&mo>, <&tog>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
         home_row_sticky: home_row_sticky {
             compatible = "zmk,behavior-sticky-key";
             label = "HOME_ROW_STICKY";
             bindings = <&kp>;
             #binding-cells = <1>;
-            release-after-ms = <2000>;
+            release-after-ms = <1500>;
             quick-release;
             ignore-modifiers;
         };
@@ -89,7 +72,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
             quick-tap-ms = <200>;
         };
 
@@ -139,8 +122,6 @@
 &kp LEFT_ALT  &kp Z   &kp X   &kp C         &kp V                 &kp B             &kp LBKT                       &kp RBKT              &kp N             &kp M                   &kp COMMA            &kp DOT  &kp FSLH  &caps_word
                               &lt 5 ESCAPE  &shift_caps LSHIFT 0  &key_layer 1 TAB  &key_mod LEFT_CONTROL SPACE    &key_mod LCTRL ENTER  &key_layer 2 TAB  &key_layer 3 BACKSPACE  &key_layer 5 DELETE
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         sym_left {
