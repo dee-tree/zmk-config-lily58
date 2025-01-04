@@ -73,8 +73,8 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <125>;
+            quick-tap-ms = <180>;
+            require-prior-idle-ms = <175>;
         };
 
         key_layer: key_layer {
@@ -84,9 +84,9 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "hold-preferred";
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <125>;
+            flavor = "balanced";
+            quick-tap-ms = <180>;
+            require-prior-idle-ms = <175>;
         };
 
         key_repeat_mod: key_repeat_mod {
@@ -97,7 +97,8 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
-            quick-tap-ms = <200>;
+            quick-tap-ms = <180>;
+            require-prior-idle-ms = <175>;
         };
     };
 
