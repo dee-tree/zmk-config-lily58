@@ -118,9 +118,9 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "balanced";
-            quick-tap-ms = <QUICK_TAP_MS>;
-            require-prior-idle-ms = <PRIOR_IDLE>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <160>;
+            require-prior-idle-ms = <50>;
         };
 
         key_repeat_mod: key_repeat_mod {
@@ -130,9 +130,9 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "balanced";
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <160>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <160>;
+            require-prior-idle-ms = <50>;
         };
 
         sticky_shift: sticky_shift {
@@ -143,6 +143,17 @@
             release-after-ms = <600>;
             ignore-modifiers;
             quick-release;
+        };
+
+        bt_mode_select_clear: bt_mode_select_clear {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BT_MODE_SELECT_CLEAR";
+            bindings = <&bt>, <&bt>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <3000>;
+            quick-tap-ms = <300>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -201,11 +212,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&bt BT_NXT   &bt BT_SEL 0               &bt BT_SEL 1               &bt BT_SEL 2                 &bt BT_SEL 3            &bt BT_SEL 4                           &ext_power EP_ON   &ext_power EP_OFF  &ext_power EP_TOG  &trans         &trans         &bt BT_CLR
-&kp GRAVE    &kp AT                     &kp LESS_THAN              &kp GREATER_THAN             &kp LEFT_BRACE          &kp RIGHT_BRACE                        &kp GRAVE          &trans             &trans             &trans         &trans         &kp TILDE
-&kp DOLLAR   &home_row_sticky LEFT_GUI  &home_row_sticky LEFT_ALT  &home_row_sticky LEFT_SHIFT  &home_row_sticky LCTRL  &kp ASTERISK                           &kp DOUBLE_QUOTES  &kp COLON          &kp QUESTION       &kp UNDER      &kp PIPE       &kp CARET
-&kp AT_SIGN  &kp HASH                   &kp SLASH                  &kp ASTERISK                 &kp DOT                 &kp COMMA        &kp LPAR    &kp RPAR  &kp SINGLE_QUOTE   &kp SEMICOLON      &kp EXCLAMATION    &kp BACKSLASH  &kp BACKSLASH  &kp PERCENT
-                                                                   &trans                       &trans                  &trans           &trans      &trans    &mo 5              &trans             &trans
+&bt_mode_select_clear BT_CLR BT_NXT  &bt BT_SEL 0               &bt BT_SEL 1               &bt BT_SEL 2                 &bt BT_SEL 3            &bt BT_SEL 4                           &ext_power EP_ON   &ext_power EP_OFF  &ext_power EP_TOG  &trans         &trans         &bt BT_CLR
+&kp TILDE                            &kp AT                     &kp LESS_THAN              &kp GREATER_THAN             &kp LEFT_BRACE          &kp RIGHT_BRACE                        &kp GRAVE          &trans             &trans             &trans         &trans         &kp TILDE
+&kp DOLLAR                           &home_row_sticky LEFT_GUI  &home_row_sticky LEFT_ALT  &home_row_sticky LEFT_SHIFT  &home_row_sticky LCTRL  &kp ASTERISK                           &kp DOUBLE_QUOTES  &kp COLON          &kp QUESTION       &kp UNDER      &kp PIPE       &kp CARET
+&kp AT_SIGN                          &kp HASH                   &kp SLASH                  &kp ASTERISK                 &kp DOT                 &kp COMMA        &kp LPAR    &kp RPAR  &kp SINGLE_QUOTE   &kp SEMICOLON      &kp EXCLAMATION    &kp BACKSLASH  &kp BACKSLASH  &kp PERCENT
+                                                                                           &trans                       &trans                  &trans           &trans      &trans    &mo 5              &trans             &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -214,7 +225,7 @@
         sym_right {
             bindings = <
 &bt BT_NXT   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4                                        &ext_power EP_ON   &ext_power EP_OFF       &ext_power EP_TOG       &trans                     &trans                 &bt BT_CLR
-&kp GRAVE    &kp AT         &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_BRACE  &kp RIGHT_BRACE                                     &kp GRAVE          &trans                  &trans                  &trans                     &trans                 &kp TILDE
+&kp TILDE    &kp AT         &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_BRACE  &kp RIGHT_BRACE                                     &kp GRAVE          &trans                  &trans                  &trans                     &trans                 &kp TILDE
 &kp DOLLAR   &kp AMPERSAND  &kp MINUS      &kp PLUS          &kp EQUAL       &kp ASTERISK                                        &kp DOUBLE_QUOTES  &home_row_sticky LCTRL  &home_row_sticky LSHFT  &home_row_sticky LEFT_ALT  &home_row_sticky LGUI  &kp CARET
 &kp AT_SIGN  &kp HASH       &kp SLASH      &kp ASTERISK      &kp DOT         &kp COMMA        &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp SINGLE_QUOTE   &kp SEMICOLON           &kp EXCLAMATION         &kp BACKSLASH              &kp BACKSLASH          &kp PERCENT
                                            &trans            &trans          &mo 5            &trans            &trans           &trans             &trans                  &trans
