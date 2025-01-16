@@ -144,6 +144,15 @@
             ignore-modifiers;
             quick-release;
         };
+
+        layer_fix: layer_fix {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_FIX";
+            bindings = <&to>, <&tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
@@ -178,7 +187,7 @@
 &kp TAB       &kp Q   &kp W   &kp E         &kp R                    &kp T                                                                       &kp Y             &kp U                   &kp I                &kp O    &kp P     &kp MINUS
 &kp LEFT_GUI  &kp A   &kp S   &kp D         &kp F                    &kp G                                                                       &kp H             &kp J                   &kp K                &kp L    &kp SEMI  &kp SQT
 &kp LEFT_ALT  &kp Z   &kp X   &kp C         &kp V                    &kp B             &kp LBKT                      &kp RBKT                    &kp N             &kp M                   &kp COMMA            &kp DOT  &kp FSLH  &caps_word
-                              &lt 6 ESCAPE  &key_repeat_mod LCTRL 0  &key_layer 2 TAB  &key_mod_shift LSHFT SPACE    &key_mod_shift LSHFT ENTER  &key_layer 3 TAB  &key_layer 4 BACKSPACE  &key_layer 6 DELETE
+                              &lt 5 ESCAPE  &key_repeat_mod LCTRL 0  &key_layer 2 TAB  &key_mod_shift LSHFT SPACE    &key_mod_shift LSHFT ENTER  &key_layer 3 TAB  &key_layer 4 BACKSPACE  &key_layer 5 DELETE
             >;
         };
 
@@ -201,11 +210,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&bt BT_NXT   &bt BT_SEL 0               &bt BT_SEL 1               &bt BT_SEL 2                 &bt BT_SEL 3            &bt BT_SEL 4                           &ext_power EP_ON   &ext_power EP_OFF  &ext_power EP_TOG  &trans         &trans         &bt BT_CLR
-&kp TILDE    &kp AT                     &kp LESS_THAN              &kp GREATER_THAN             &kp LEFT_BRACE          &kp RIGHT_BRACE                        &kp GRAVE          &trans             &trans             &trans         &trans         &kp TILDE
-&kp DOLLAR   &home_row_sticky LEFT_GUI  &home_row_sticky LEFT_ALT  &home_row_sticky LEFT_SHIFT  &home_row_sticky LCTRL  &kp ASTERISK                           &kp DOUBLE_QUOTES  &kp COLON          &kp QUESTION       &kp UNDER      &kp PIPE       &kp CARET
-&kp AT_SIGN  &kp HASH                   &kp SLASH                  &kp ASTERISK                 &kp DOT                 &kp COMMA        &kp LPAR    &kp RPAR  &kp SINGLE_QUOTE   &kp SEMICOLON      &kp EXCLAMATION    &kp BACKSLASH  &kp BACKSLASH  &kp PERCENT
-                                                                   &trans                       &trans                  &trans           &trans      &trans    &mo 5              &trans             &trans
+&bt BT_NXT   &bt BT_SEL 0               &bt BT_SEL 1               &bt BT_SEL 2                 &bt BT_SEL 3            &bt BT_SEL 4                           &trans             &trans         &trans           &trans         &trans         &bt BT_CLR
+&kp TILDE    &kp AT                     &kp LESS_THAN              &kp GREATER_THAN             &kp LEFT_BRACE          &kp RIGHT_BRACE                        &kp GRAVE          &kp RBRC       &trans           &trans         &trans         &kp TILDE
+&kp DOLLAR   &home_row_sticky LEFT_GUI  &home_row_sticky LEFT_ALT  &home_row_sticky LEFT_SHIFT  &home_row_sticky LCTRL  &kp EXCLAMATION                        &kp DOUBLE_QUOTES  &kp COLON      &kp QUESTION     &kp UNDER      &kp PIPE       &kp CARET
+&kp AT_SIGN  &kp HASH                   &kp SLASH                  &kp ASTERISK                 &kp DOT                 &kp COMMA        &kp LPAR    &kp RPAR  &kp SINGLE_QUOTE   &kp SEMICOLON  &kp EXCLAMATION  &kp BACKSLASH  &kp BACKSLASH  &kp PERCENT
+                                                                   &trans                       &trans                  &trans           &trans      &trans    &mo 6              &trans         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -213,11 +222,11 @@
 
         sym_right {
             bindings = <
-&bt BT_NXT   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4                                        &ext_power EP_ON   &ext_power EP_OFF       &ext_power EP_TOG       &trans                     &trans                 &bt BT_CLR
-&kp TILDE    &kp AT         &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_BRACE  &kp RIGHT_BRACE                                     &kp GRAVE          &trans                  &trans                  &trans                     &trans                 &kp TILDE
-&kp DOLLAR   &kp AMPERSAND  &kp MINUS      &kp PLUS          &kp EQUAL       &kp ASTERISK                                        &kp DOUBLE_QUOTES  &home_row_sticky LCTRL  &home_row_sticky LSHFT  &home_row_sticky LEFT_ALT  &home_row_sticky LGUI  &kp CARET
+&bt BT_NXT   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4                                        &trans             &trans                  &trans                  &trans                     &trans                 &bt BT_CLR
+&kp TILDE    &kp AT         &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_BRACE  &kp RIGHT_BRACE                                     &kp GRAVE          &kp RIGHT_BRACE         &trans                  &trans                     &trans                 &kp TILDE
+&kp DOLLAR   &kp AMPERSAND  &kp MINUS      &kp PLUS          &kp EQUAL       &kp EXCLAMATION                                     &kp DOUBLE_QUOTES  &home_row_sticky LCTRL  &home_row_sticky LSHFT  &home_row_sticky LEFT_ALT  &home_row_sticky LGUI  &kp CARET
 &kp AT_SIGN  &kp HASH       &kp SLASH      &kp ASTERISK      &kp DOT         &kp COMMA        &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp SINGLE_QUOTE   &kp SEMICOLON           &kp EXCLAMATION         &kp BACKSLASH              &kp BACKSLASH          &kp PERCENT
-                                           &trans            &trans          &mo 5            &trans            &trans           &trans             &trans                  &trans
+                                           &trans            &trans          &mo 6            &trans            &trans           &trans             &trans                  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -232,33 +241,33 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&out OUT_TOG     &out OUT_USB    &out OUT_BLE    &trans        &trans           &trans                                  &trans  &trans                         &trans                       &trans                     &trans                     &trans
-&trans           &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &trans                                  &trans  &trans                         &trans                       &trans                     &trans                     &trans
+&trans           &trans          &trans          &trans        &trans           &trans                                  &to 1   &to 7                          &trans                       &trans                     &trans                     &layer_fix 4 4
+&trans           &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &trans                                  &trans  &out OUT_TOG                   &out OUT_USB                 &out OUT_BLE               &trans                     &trans
 &msc SCRL_LEFT   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &msc SCRL_UP                            &trans  &home_row_sticky LEFT_CONTROL  &home_row_sticky LEFT_SHIFT  &home_row_sticky LEFT_ALT  &home_row_sticky LEFT_GUI  &trans
 &msc SCRL_RIGHT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &msc SCRL_DOWN  &mkp LCLK    &mkp RCLK  &trans  &mkp LCLK                      &mkp RCLK                    &trans                     &trans                     &trans
-                                                 &trans        &trans           &mo 5           &trans       &trans     &trans  &trans                         &trans
+                                                 &trans        &trans           &mo 6           &trans       &trans     &trans  &trans                         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        media {
+        numpad {
             bindings = <
-&trans                &trans  &trans  &trans           &trans         &trans                    &to 1       &to 7          &trans            &trans                     &trans      &trans
-&kp C_BRIGHTNESS_DEC  &trans  &trans  &trans           &trans         &trans                    &trans      &trans         &trans            &trans                     &trans      &kp C_BRIGHTNESS_INC
-&kp C_VOLUME_DOWN     &trans  &trans  &trans           &trans         &trans                    &kp C_MUTE  &kp C_PREV     &kp C_PLAY_PAUSE  &home_row_sticky LEFT_ALT  &kp C_NEXT  &kp C_VOLUME_UP
-&trans                &trans  &trans  &kp PRINTSCREEN  &kp LG(LS(S))  &trans  &trans    &trans  &trans      &kp LG(SPACE)  &trans            &trans                     &trans      &trans
-                                      &trans           &caps_word     &trans  &trans    &trans  &trans      &trans         &trans
+&trans        &trans          &trans        &trans        &trans          &trans                        &trans     &trans                    &trans      &trans  &trans   &layer_fix 5 5
+&trans        &kp PLUS        &kp N9        &kp N8        &kp NUMBER_4    &kp COMMA                     &trans     &kp F4                    &kp F8      &kp F9  &kp F11  &trans
+&kp LEFT_WIN  &kp MINUS       &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1    &kp N0                        &trans     &kp F1                    &kp F2      &kp F3  &kp F10  &trans
+&kp LEFT_ALT  &kp UNDERSCORE  &kp N7        &kp NUMBER_6  &kp N5          &kp PERIOD  &trans    &trans  &trans     &kp F5                    &kp F6      &kp F7  &kp F12  &trans
+                                            &kp LCTRL     &kp LEFT_SHIFT  &kp LEFT    &trans    &trans  &kp RIGHT  &mt LEFT_SHIFT BACKSPACE  &kp DELETE
             >;
         };
 
-        numpad {
+        media {
             bindings = <
-&trans        &trans          &trans        &trans        &trans          &trans                                          &trans     &trans                    &trans      &trans  &trans   &trans
-&trans        &kp PLUS        &kp N9        &kp N8        &kp NUMBER_4    &kp COMMA                                       &trans     &kp F4                    &kp F8      &kp F9  &kp F11  &trans
-&kp LEFT_WIN  &kp MINUS       &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1    &kp N0                                          &trans     &kp F1                    &kp F2      &kp F3  &kp F10  &trans
-&kp LEFT_ALT  &kp UNDERSCORE  &kp N7        &kp NUMBER_6  &kp N5          &kp PERIOD  &trans             &trans           &trans     &kp F5                    &kp F6      &kp F7  &kp F12  &tog 6
-                                            &kp LCTRL     &kp LEFT_SHIFT  &kp LEFT    &mt LCTRL SPACE    &mt LCTRL ENTER  &kp RIGHT  &mt LEFT_SHIFT BACKSPACE  &kp DELETE
+&trans                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3   &bt BT_SEL 4                    &to 1       &to 7          &trans            &trans                     &trans             &layer_fix 6 6
+&kp C_BRIGHTNESS_DEC  &trans        &trans        &trans           &trans         &trans                          &trans      &trans         &trans            &trans                     &ext_power EP_TOG  &kp C_BRIGHTNESS_INC
+&kp C_VOLUME_DOWN     &trans        &trans        &trans           &trans         &trans                          &kp C_MUTE  &kp C_PREV     &kp C_PLAY_PAUSE  &home_row_sticky LEFT_ALT  &kp C_NEXT         &kp C_VOLUME_UP
+&trans                &trans        &trans        &kp PRINTSCREEN  &kp LG(LS(S))  &trans        &trans    &trans  &trans      &kp LG(SPACE)  &trans            &trans                     &trans             &trans
+                                                  &trans           &caps_word     &trans        &trans    &trans  &trans      &trans         &trans
             >;
         };
 
