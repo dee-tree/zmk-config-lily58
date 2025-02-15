@@ -90,7 +90,7 @@
         key_mod_thumb: key_mod_thumb {
             compatible = "zmk,behavior-hold-tap";
             label = "KEY_MOD_THUMB";
-            bindings = <&kp>, <&kp>;
+            bindings = <&sticky_ctrl>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
@@ -171,6 +171,16 @@
             flavor = "hold-preferred";
             quick-tap-ms = <180>;
             require-prior-idle-ms = <70>;
+        };
+
+        sticky_ctrl: sticky_ctrl {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_CTRL";
+            bindings = <&sk>;
+            #binding-cells = <1>;
+            release-after-ms = <300>;
+            ignore-modifiers;
+            quick-release;
         };
     };
 
