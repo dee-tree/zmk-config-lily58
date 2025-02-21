@@ -96,7 +96,7 @@
             tapping-term-ms = <250>;
             flavor = "tap-preferred";
             quick-tap-ms = <180>;
-            require-prior-idle-ms = <70>;
+            require-prior-idle-ms = <0>;
         };
 
         key_layer: key_layer {
@@ -151,7 +151,7 @@
             tapping-term-ms = <250>;
             flavor = "tap-preferred";
             quick-tap-ms = <180>;
-            require-prior-idle-ms = <70>;
+            require-prior-idle-ms = <0>;
         };
 
         shift_dedicated: shift_dedicated {
