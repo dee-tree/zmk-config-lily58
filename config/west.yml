@@ -8,7 +8,7 @@ manifest:
     # - name: urob
     #   url-base: https://github.com/urob
     - name: swapper
-    - url-base: https://github.com/caksoylar/zmk-smart-toggle
+      url-base: https://github.com/caksoylar
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -18,8 +18,8 @@ manifest:
     # - name: zmk-auto-layer
     #   remote: urob
     #   revision: main
-    - name: zmk-swapper
-    - remote: swapper
-    - revision: main
+    - name: zmk-smart-toggle
+      remote: swapper
+      revision: main
   self:
     path: config
