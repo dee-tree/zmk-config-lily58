@@ -234,7 +234,7 @@
             #binding-cells = <0>;
             bindings = <&kp LALT>, <&kp TAB>;
 
-            ignored-key-positions = <12>, <51>, <52>, <55>, <56>;
+            ignored-key-positions = <12>, <25>, <51>, <52>, <55>, <56>;
         };
 
         layer_swapper: layer_swapper {
