@@ -22,7 +22,7 @@
 
         sticky_shift_left {
             bindings = <&sticky_shift LEFT_SHIFT>;
-            key-positions = <39 40>;
+            key-positions = <>;
             require-prior-idle-ms = <100>;
             timeout-ms = <30>;
             layers = <0 1>;
@@ -30,7 +30,7 @@
 
         sticky_shift_right {
             bindings = <&sticky_shift LEFT_SHIFT>;
-            key-positions = <46 45>;
+            key-positions = <>;
             timeout-ms = <30>;
             require-prior-idle-ms = <100>;
             layers = <0 1>;
