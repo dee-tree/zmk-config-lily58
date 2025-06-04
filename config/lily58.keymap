@@ -326,7 +326,7 @@
 
             bindings = <
 &bt BT_NXT  &bt BT_SEL 0               &bt BT_SEL 1               &bt BT_SEL 2                 &bt BT_SEL 3            &bt BT_SEL 4                           &trans             &trans         &trans        &trans            &trans       &bt BT_CLR
-&kp TILDE   &kp AT                     &kp LESS_THAN              &kp EXCL                     &kp LEFT_BRACE          &kp RIGHT_BRACE                        &kp GRAVE          &kp RBRC       &kp EXCL      &kp GREATER_THAN  &kp PERCENT  &kp TILDE
+&kp TILDE   &kp AT                     &kp LESS_THAN              &kp GREATER_THAN             &kp LEFT_BRACE          &kp RIGHT_BRACE                        &kp GRAVE          &kp RBRC       &kp EXCL      &kp GREATER_THAN  &kp PERCENT  &kp TILDE
 &kp CARET   &home_row_sticky LEFT_GUI  &home_row_sticky LEFT_ALT  &home_row_sticky LEFT_SHIFT  &home_row_sticky LCTRL  &kp DOLLAR                             &kp DOUBLE_QUOTES  &kp EQUAL      &kp COLON     &kp UNDER         &kp PIPE     &kp DOLLAR
 &trans      &kp HASH                   &kp SLASH                  &kp ASTERISK                 &kp DOT                 &kp COMMA        &kp LPAR    &kp RPAR  &kp SINGLE_QUOTE   &kp SEMICOLON  &kp QUESTION  &kp BACKSLASH     &kp SLASH    &trans
                                                                   &trans                       &trans                  &trans           &trans      &trans    &mo 7              &trans         &trans
@@ -337,11 +337,11 @@
 
         sym_right {
             bindings = <
-&bt BT_NXT  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4                                        &trans             &trans                  &trans                  &trans                     &trans                 &bt BT_CLR
-&kp TILDE   &kp AT         &kp LESS_THAN  &kp EXCL      &kp LEFT_BRACE  &kp RIGHT_BRACE                                     &kp GRAVE          &kp RIGHT_BRACE         &kp EXCL                &kp GREATER_THAN           &kp PERCENT            &kp TILDE
-&kp CARET   &kp AMPERSAND  &kp MINUS      &kp PLUS      &kp EQUAL       &kp DOLLAR                                          &kp DOUBLE_QUOTES  &home_row_sticky LCTRL  &home_row_sticky LSHFT  &home_row_sticky LEFT_ALT  &home_row_sticky LGUI  &kp DOLLAR
-&trans      &kp HASH       &kp SLASH      &kp ASTERISK  &kp DOT         &kp COMMA        &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp SINGLE_QUOTE   &kp SEMICOLON           &kp QUESTION            &kp BACKSLASH              &kp SLASH              &trans
-                                          &trans        &trans          &mo 7            &trans            &trans           &trans             &trans                  &trans
+&bt BT_NXT  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4                                        &trans             &trans                  &trans                  &trans                     &trans                 &bt BT_CLR
+&kp TILDE   &kp AT         &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_BRACE  &kp RIGHT_BRACE                                     &kp GRAVE          &kp RIGHT_BRACE         &kp EXCL                &kp GREATER_THAN           &kp PERCENT            &kp TILDE
+&kp CARET   &kp AMPERSAND  &kp MINUS      &kp PLUS          &kp EQUAL       &kp DOLLAR                                          &kp DOUBLE_QUOTES  &home_row_sticky LCTRL  &home_row_sticky LSHFT  &home_row_sticky LEFT_ALT  &home_row_sticky LGUI  &kp DOLLAR
+&trans      &kp HASH       &kp SLASH      &kp ASTERISK      &kp DOT         &kp COMMA        &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp SINGLE_QUOTE   &kp SEMICOLON           &kp QUESTION            &kp BACKSLASH              &kp SLASH              &trans
+                                          &trans            &trans          &mo 7            &trans            &trans           &trans             &trans                  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
