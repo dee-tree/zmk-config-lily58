@@ -40,7 +40,7 @@
             bindings = <&kp LC(LS(C))>;
             key-positions = <15 14>;
             timeout-ms = <30>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <250>;
             layers = <0 1>;
         };
 
@@ -48,7 +48,7 @@
             bindings = <&kp LC(LS(V))>;
             key-positions = <15 16>;
             timeout-ms = <30>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <250>;
             layers = <0 1>;
         };
 
@@ -56,7 +56,7 @@
             bindings = <&kp LC(LS(C))>;
             key-positions = <21 20>;
             timeout-ms = <30>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <250>;
             layers = <1 0>;
         };
 
@@ -64,7 +64,7 @@
             bindings = <&kp LC(LS(V))>;
             key-positions = <19 20>;
             timeout-ms = <30>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <250>;
             layers = <1 0>;
         };
 
@@ -72,7 +72,7 @@
             bindings = <&kp F13>;
             key-positions = <39 40>;
             timeout-ms = <20>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <250>;
             layers = <0 1>;
         };
 
@@ -80,7 +80,7 @@
             bindings = <&kp F13>;
             key-positions = <45 46>;
             timeout-ms = <20>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <250>;
             layers = <0 1>;
         };
     };
@@ -237,16 +237,16 @@
             ignored-key-positions = <12>, <25>, <51>, <52>, <55>, <56>;
         };
 
-        layer_swapper: layer_swapper {
+        layer_sticky: layer_sticky {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_SWAPPER";
-            bindings = <&mo>, <&swapper>;
+            label = "LAYER_STICKY";
+            bindings = <&mo>, <&home_row_sticky>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "hold-preferred";
-            quick-tap-ms = <160>;
-            require-prior-idle-ms = <50>;
+            flavor = "balanced";
+            quick-tap-ms = <199>;
+            require-prior-idle-ms = <0>;
         };
     };
 
@@ -278,11 +278,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC       &kp N1  &kp N2  &kp N3     &kp N4            &kp N5                                                                    &kp N6            &kp N7                                &kp N8               &kp N9   &kp N0    &kp GRAVE
-&kp TAB       &kp Q   &kp W   &kp E      &kp R             &kp T                                                                     &kp Y             &kp U                                 &kp I                &kp O    &kp P     &kp MINUS
-&kp LEFT_GUI  &kp A   &kp S   &kp D      &kp F             &kp G                                                                     &kp H             &kp J                                 &kp K                &kp L    &kp SEMI  &kp SQT
-&kp LEFT_ALT  &kp Z   &kp X   &kp C      &kp V             &kp B             &kp LBKT                      &kp RBKT                  &kp N             &kp M                                 &kp COMMA            &kp DOT  &kp FSLH  &key_repeat
-                              &lt 2 F14  &shift_dedicated  &key_layer 4 TAB  &key_mod_thumb LCTRL SPACE    &key_layer_thumb 6 ENTER  &key_layer 5 TAB  &key_mod_shift RIGHT_SHIFT BACKSPACE  &key_layer 2 DELETE
+&kp ESC       &kp N1  &kp N2  &kp N3                          &kp N4            &kp N5                                                                    &kp N6            &kp N7                                &kp N8               &kp N9   &kp N0    &kp GRAVE
+&kp TAB       &kp Q   &kp W   &kp E                           &kp R             &kp T                                                                     &kp Y             &kp U                                 &kp I                &kp O    &kp P     &kp MINUS
+&kp LEFT_GUI  &kp A   &kp S   &kp D                           &kp F             &kp G                                                                     &kp H             &kp J                                 &kp K                &kp L    &kp SEMI  &kp SQT
+&kp LEFT_ALT  &kp Z   &kp X   &kp C                           &kp V             &kp B             &kp LBKT                      &kp RBKT                  &kp N             &kp M                                 &kp COMMA            &kp DOT  &kp FSLH  &key_repeat
+                              &layer_sticky 2 LC(LEFT_SHIFT)  &shift_dedicated  &key_layer 4 TAB  &key_mod_thumb LCTRL SPACE    &key_layer_thumb 6 ENTER  &key_layer 5 TAB  &key_mod_shift RIGHT_SHIFT BACKSPACE  &key_layer 2 DELETE
             >;
         };
 
@@ -325,11 +325,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&bt BT_NXT  &bt BT_SEL 0               &bt BT_SEL 1               &bt BT_SEL 2                 &bt BT_SEL 3            &bt BT_SEL 4                           &trans             &trans         &trans        &trans            &trans       &bt BT_CLR
-&kp TILDE   &kp AT                     &kp LESS_THAN              &kp GREATER_THAN             &kp LEFT_BRACE          &kp RIGHT_BRACE                        &kp GRAVE          &kp RBRC       &kp EXCL      &kp GREATER_THAN  &kp PERCENT  &kp TILDE
-&kp CARET   &home_row_sticky LEFT_GUI  &home_row_sticky LEFT_ALT  &home_row_sticky LEFT_SHIFT  &home_row_sticky LCTRL  &kp DOLLAR                             &kp DOUBLE_QUOTES  &kp EQUAL      &kp COLON     &kp UNDER         &kp PIPE     &kp DOLLAR
-&trans      &kp HASH                   &kp SLASH                  &kp ASTERISK                 &kp DOT                 &kp COMMA        &kp LPAR    &kp RPAR  &kp SINGLE_QUOTE   &kp SEMICOLON  &kp QUESTION  &kp BACKSLASH     &kp SLASH    &trans
-                                                                  &trans                       &trans                  &trans           &trans      &trans    &mo 7              &trans         &trans
+&bt BT_NXT  &bt BT_SEL 0               &bt BT_SEL 1               &bt BT_SEL 2                 &bt BT_SEL 3            &bt BT_SEL 4                                         &trans             &trans         &trans        &trans            &trans       &bt BT_CLR
+&kp TILDE   &kp AT                     &kp LESS_THAN              &kp GREATER_THAN             &kp LEFT_BRACE          &kp RIGHT_BRACE                                      &kp GRAVE          &kp RBRC       &kp EXCL      &kp GREATER_THAN  &kp PERCENT  &kp TILDE
+&kp CARET   &home_row_sticky LEFT_GUI  &home_row_sticky LEFT_ALT  &home_row_sticky LEFT_SHIFT  &home_row_sticky LCTRL  &kp DOLLAR                                           &kp DOUBLE_QUOTES  &kp EQUAL      &kp COLON     &kp UNDER         &kp PIPE     &kp DOLLAR
+&trans      &kp HASH                   &kp SLASH                  &kp ASTERISK                 &home_row_sticky F14    &home_row_sticky LC(LEFT_ALT)  &kp LPAR    &kp RPAR  &kp SINGLE_QUOTE   &kp SEMICOLON  &kp QUESTION  &kp BACKSLASH     &kp SLASH    &trans
+                                                                  &trans                       &trans                  &trans                         &trans      &trans    &mo 7              &trans         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
