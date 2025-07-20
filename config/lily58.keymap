@@ -389,7 +389,7 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&bt BT_NXT  &bt BT_SEL 0               &bt BT_SEL 1               &bt BT_SEL 2                 &bt BT_SEL 3            &bt BT_SEL 4                                         &trans             &trans         &trans        &trans            &trans       &bt_reset_hold BT_CLR_ALL BT_CLR
+&bt BT_NXT  &bt BT_SEL 0               &bt BT_SEL 1               &bt BT_SEL 2                 &bt BT_SEL 3            &bt BT_SEL 4                                         &trans             &trans         &trans        &trans            &trans       &bt BT_CLR
 &kp TILDE   &kp AT                     &kp LESS_THAN              &kp GREATER_THAN             &kp LEFT_BRACE          &kp RIGHT_BRACE                                      &kp GRAVE          &kp RBRC       &kp EXCL      &kp GREATER_THAN  &kp PERCENT  &kp TILDE
 &kp CARET   &home_row_sticky LEFT_GUI  &home_row_sticky LEFT_ALT  &home_row_sticky LEFT_SHIFT  &home_row_sticky LCTRL  &kp DOLLAR                                           &kp DOUBLE_QUOTES  &kp EQUAL      &kp COLON     &kp UNDER         &kp PIPE     &kp DOLLAR
 &trans      &kp HASH                   &kp SLASH                  &kp ASTERISK                 &home_row_sticky F14    &home_row_sticky LC(LEFT_ALT)  &kp LPAR    &kp RPAR  &kp SINGLE_QUOTE   &kp SEMICOLON  &kp QUESTION  &kp BACKSLASH     &kp SLASH    &trans
@@ -401,7 +401,7 @@
 
         sym_right {
             bindings = <
-&bt BT_NXT  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4                                        &trans             &trans                  &trans                  &trans                     &trans                 &bt_reset_hold BT_CLR_ALL BT_CLR
+&bt BT_NXT  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4                                        &trans             &trans                  &trans                  &trans                     &trans                 &bt BT_CLR
 &kp TILDE   &kp AT         &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_BRACE  &kp RIGHT_BRACE                                     &kp GRAVE          &kp RIGHT_BRACE         &kp EXCL                &kp GREATER_THAN           &kp PERCENT            &kp TILDE
 &kp CARET   &kp AMPERSAND  &kp MINUS      &kp PLUS          &kp EQUAL       &kp DOLLAR                                          &kp DOUBLE_QUOTES  &home_row_sticky LCTRL  &home_row_sticky LSHFT  &home_row_sticky LEFT_ALT  &home_row_sticky LGUI  &kp DOLLAR
 &trans      &kp HASH       &kp SLASH      &kp ASTERISK      &kp DOT         &kp COMMA        &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp SINGLE_QUOTE   &kp SEMICOLON           &kp QUESTION            &kp BACKSLASH              &kp SLASH              &trans
@@ -432,11 +432,11 @@
 
         media {
             bindings = <
-&trans                &bt BT_SEL 0                      &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3   &bt BT_SEL 4                    &to 1       &to 8       &trans            &trans                        &trans                         &layer_fix 7 7
-&kp C_BRIGHTNESS_DEC  &bt_reset_hold BT_CLR_ALL BT_CLR  &trans        &trans           &trans         &trans                          &trans      &trans      &trans            &output_hold OUT_USB OUT_TOG  &ext_power_hold EP_OFF EP_TOG  &kp C_BRIGHTNESS_INC
-&kp C_VOLUME_DOWN     &kp LS(TAB)                       &trans        &trans           &swapper       &trans                          &kp C_MUTE  &kp C_PREV  &kp C_PLAY_PAUSE  &home_row_sticky LEFT_ALT     &kp C_NEXT                     &kp C_VOLUME_UP
-&trans                &trans                            &trans        &kp PRINTSCREEN  &kp LG(LS(S))  &trans        &trans    &trans  &trans      &trans      &trans            &trans                        &trans                         &trans
-                                                                      &trans           &caps_word     &trans        &trans    &trans  &trans      &trans      &trans
+&trans                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3   &bt BT_SEL 4                    &to 1       &to 8       &trans            &trans                        &trans                         &layer_fix 7 7
+&kp C_BRIGHTNESS_DEC  &bt BT_CLR    &trans        &trans           &trans         &trans                          &trans      &trans      &trans            &output_hold OUT_USB OUT_TOG  &ext_power_hold EP_OFF EP_TOG  &kp C_BRIGHTNESS_INC
+&kp C_VOLUME_DOWN     &kp LS(TAB)   &trans        &trans           &swapper       &trans                          &kp C_MUTE  &kp C_PREV  &kp C_PLAY_PAUSE  &home_row_sticky LEFT_ALT     &kp C_NEXT                     &kp C_VOLUME_UP
+&trans                &trans        &trans        &kp PRINTSCREEN  &kp LG(LS(S))  &trans        &trans    &trans  &trans      &trans      &trans            &trans                        &trans                         &trans
+                                                  &trans           &caps_word     &trans        &trans    &trans  &trans      &trans      &trans
             >;
         };
 
