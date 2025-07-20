@@ -262,7 +262,7 @@
         bt_reset_hold: bt_reset_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "BT_RESET_HOLD";
-            bindings = <&bt_clear_all_macro>, <&bt_clear_macro>;
+            bindings = <&bt_clear_all_macro>, <&none>;
 
             #binding-cells = <2>;
             tapping-term-ms = <3000>;
@@ -389,7 +389,7 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&bt BT_NXT  &bt BT_SEL 0               &bt BT_SEL 1               &bt BT_SEL 2                 &bt BT_SEL 3            &bt BT_SEL 4                                         &trans             &trans         &trans        &trans            &trans       &bt BT_CLR
+&bt BT_NXT  &bt BT_SEL 0               &bt BT_SEL 1               &bt BT_SEL 2                 &bt BT_SEL 3            &bt BT_SEL 4                                         &trans             &trans         &trans        &trans            &trans       &bt_reset_hold 0 0
 &kp TILDE   &kp AT                     &kp LESS_THAN              &kp GREATER_THAN             &kp LEFT_BRACE          &kp RIGHT_BRACE                                      &kp GRAVE          &kp RBRC       &kp EXCL      &kp GREATER_THAN  &kp PERCENT  &kp TILDE
 &kp CARET   &home_row_sticky LEFT_GUI  &home_row_sticky LEFT_ALT  &home_row_sticky LEFT_SHIFT  &home_row_sticky LCTRL  &kp DOLLAR                                           &kp DOUBLE_QUOTES  &kp EQUAL      &kp COLON     &kp UNDER         &kp PIPE     &kp DOLLAR
 &trans      &kp HASH                   &kp SLASH                  &kp ASTERISK                 &home_row_sticky F14    &home_row_sticky LC(LEFT_ALT)  &kp LPAR    &kp RPAR  &kp SINGLE_QUOTE   &kp SEMICOLON  &kp QUESTION  &kp BACKSLASH     &kp SLASH    &trans
