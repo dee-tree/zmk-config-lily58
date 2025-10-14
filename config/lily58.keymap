@@ -36,42 +36,10 @@
             layers = <0 1>;
         };
 
-        combo-copy_left {
-            bindings = <&kp LC(LS(C))>;
-            key-positions = <15 14>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <250>;
-            layers = <0 1>;
-        };
-
-        combo-paste-left {
-            bindings = <&kp LC(LS(V))>;
-            key-positions = <15 16>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <250>;
-            layers = <0 1>;
-        };
-
-        combo-copy-right {
-            bindings = <&kp LC(LS(C))>;
-            key-positions = <21 20>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <250>;
-            layers = <1 0>;
-        };
-
-        combo-paste-right {
-            bindings = <&kp LC(LS(V))>;
-            key-positions = <19 20>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <250>;
-            layers = <1 0>;
-        };
-
         leader-left {
             bindings = <&kp F13>;
             key-positions = <39 40>;
-            timeout-ms = <20>;
+            timeout-ms = <15>;
             require-prior-idle-ms = <250>;
             layers = <0 1>;
         };
@@ -79,7 +47,7 @@
         leader-right {
             bindings = <&kp F13>;
             key-positions = <45 46>;
-            timeout-ms = <20>;
+            timeout-ms = <15>;
             require-prior-idle-ms = <250>;
             layers = <0 1>;
         };
