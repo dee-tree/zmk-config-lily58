@@ -79,22 +79,6 @@
             require-prior-idle-ms = <100>;
             layers = <0 1>;
         };
-
-        leader-left {
-            bindings = <&kp F13>;
-            key-positions = <39 40>;
-            timeout-ms = <15>;
-            require-prior-idle-ms = <250>;
-            layers = <0 1>;
-        };
-
-        leader-right {
-            bindings = <&kp F13>;
-            key-positions = <45 46>;
-            timeout-ms = <15>;
-            require-prior-idle-ms = <250>;
-            layers = <0 1>;
-        };
     };
 
     behaviors {
@@ -140,7 +124,7 @@
             label = "HOME_ROW_STICKY";
             bindings = <&kp>;
             #binding-cells = <1>;
-            release-after-ms = <1500>;
+            release-after-ms = <1000>;
             quick-release;
             ignore-modifiers;
         };
