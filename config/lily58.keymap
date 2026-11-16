@@ -338,7 +338,7 @@
         media_layer {
             bindings = <
 &bt BT_NXT                  &bt BT_SEL 0        &bt BT_SEL 1         &bt BT_SEL 2                &bt BT_SEL 3   &bt BT_SEL 4                    &tog FOCAL_L &tog JAM_L &trans            &trans                         &trans                         &bt_reset_hold 0 0
-&trans                      &bt_reset_hold 0 0  &sys_reset_hold 0 0  &bootloader_reset_hold 0 0  &trans         &trans                          &trans       &trans      &trans            &output_hold OUT_USB OUT_TOG  &ext_power_hold EP_OFF EP_TOG  &trans
+&trans                      &bt_reset_hold 0 0  &trans               &bootloader_reset_hold 0 0  &trans         &trans                          &trans       &trans      &trans            &output_hold OUT_USB OUT_TOG  &ext_power_hold EP_OFF EP_TOG  &trans
 &trans                      &kp C_PREV          &kp C_VOLUME_DOWN    &kp C_VOLUME_UP             &kp C_NEXT     &trans                          &trans       &kp C_PREV  &kp C_VOLUME_DOWN &kp C_VOLUME_UP               &kp C_NEXT                     &trans
 &bootloader_reset_hold 0 0  &trans              &trans               &trans                      &trans         &trans        &trans    &trans  &trans       &trans      &trans            &trans                        &trans                         &bootloader_reset_hold 0 0
                                                                      &trans                      &trans         &trans        &trans    &trans  &trans       &trans      &trans
